@@ -4,6 +4,7 @@
     ========
 </div>
 <div class="list-group">
+    {{#if data.length}}
     {{#each data}}
     <div class="row">
         <div class="col-sm-12">
@@ -20,6 +21,9 @@
         </div>
     </div>
     {{/each}}
+    {{else }}
+    <h1>Nothing here !!!</h1>
+    {{/if }}
 </div>
 
 {{!-- Delete hidden form --}}
