@@ -40,7 +40,7 @@ class PostController {
 
     update (req,res) {
         let pos;
-     
+        
         const data = req.body;
         const post = posts.find((item, index) => {
             if (item.id === req.body.id){
@@ -50,7 +50,9 @@ class PostController {
         });
 
         if (post) {
-            posts[pos] = data;
+            posts[pos].title = data.title;
+            posts[pos].description = data.description;
+            posts[pos].content = data.content;
         }
 
         res.redirect('/');
