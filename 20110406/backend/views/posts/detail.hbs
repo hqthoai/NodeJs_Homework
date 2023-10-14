@@ -1,0 +1,60 @@
+<a href="/">Return to home</a>
+<div class="container">
+    <div class="row clearfix d-flex justify-content-center align-items-center">
+        <div class="col-lg-8 col-md-12">
+            <div class="card single_post">
+                <div class="body">
+
+                    <h3>{{data.title}}</h3>
+                    <p>{{{ data.content }}}</p>
+                </div>
+            </div>
+            {{!-- Comment section --}}
+            <div class="card">
+                <div class="header">
+                    <h2>Comments</h2>
+                </div>
+                <div class="body">
+                    <ul class="comment-reply list-unstyled">
+                         {{#each data.comments}}
+                        <li class="row clearfix">
+                            <div class="icon-box col-md-2 col-4"><img class="img-fluid img-thumbnail"
+                                    src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Awesome Image"></div>
+                            <div class="text-box col-md-10 col-8 p-l-0 p-r0">
+                                <h5 class="m-b-0">Guest</h5>
+                                <p>{{ this }} </p>
+                                <ul class="list-inline">
+                                    <li><a href="javascript:void(0);">Sep 2023</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        {{/each }}
+                    </ul>
+                </div>
+            </div>
+            {{!-- End comment section --}}
+            <div class="card">
+                <div class="header">
+                    <h2>Leave a reply <small>Your email address will not be published</small></h2>
+                </div>
+                <div class="body">
+                    <div class="comment-form">
+                        <form class="row clearfix" action="/posts/{{data.id}}/comment" method="POST">
+
+                            <div class="col-sm-12">
+                                <input type="hidden" id="id" name="id" value="{{ data.id }}">
+                                <div class="form-group">
+                                    <textarea rows="4" class="form-control no-resize"
+                                        placeholder="Please type what you want..."
+                                        name="comment"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-block btn-primary">SUBMIT</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
