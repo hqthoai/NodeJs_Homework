@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-const express = require ('express');
 const helmet = require('helmet');
+const express = require ('express');
 require('dotenv').config();
 const passport = require('passport');
 const {Strategy} = require('passport-google-oauth20');
@@ -21,7 +21,6 @@ const AUTH_OPTIONS = {
     clientID: config.CLIENT_ID,
     clientSecret: config.CLIENT_SECRET
 };
-
 
 function verifyCallback(accessToken, refreshToken, profile, done) {
     console.log('Google profile', profile);
